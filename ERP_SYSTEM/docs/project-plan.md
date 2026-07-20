@@ -11,7 +11,7 @@ A modern Accounting ERP System built with Laravel.
 - Products
 - Inventory
 - Sales
-- Purchases
+- Purchase
 - Reports
 - AI Assistant
 
