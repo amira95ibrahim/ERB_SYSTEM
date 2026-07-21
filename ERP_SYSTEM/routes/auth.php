@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
-        ->name('register');
+        ->name('register'); // get create page for register
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
@@ -29,7 +29,12 @@ Route::middleware('guest')->group(function () {
         ->name('password.email');
 
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
-        ->name('password.reset');
+        ->name('password.reset'); 
+        // why we send token here ? 
+        // because when user click on reset password link from email 
+        // then we need to verify the token 
+        // and then show the reset password form                               
+
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
         ->name('password.store');
